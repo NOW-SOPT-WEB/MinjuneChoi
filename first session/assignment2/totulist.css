@@ -1,0 +1,150 @@
+
+
+ body {
+    font-family: '나눔고딕', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    display: flex;
+
+    flex-direction: column;
+    
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    overflow: auto;
+}
+
+.todo-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.not-container {
+   
+
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.done-container{
+    margin-left: 150px;
+    position: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    animation: fa;
+}
+.two{
+    display: flex;
+    flex-direction: row;
+    padding: 200px;
+    
+}
+h3{
+    background-color: blue;
+    padding: 1px;
+    box-shadow: 0 0 10px rgba(150, 21, 21, 0.1);
+    animation: blink 1s linear infinite;
+}
+.close-button {
+    
+    cursor: pointer; /* 마우스를 올렸을 때 커서 모양 변경 */
+    float: right; /* 오른쪽 정렬 */
+    font-size: 20px; /* 아이콘 크기 */
+    line-height: 20px; /* 높이 조정 */
+    width: 20px; /* 너비 조정 */
+    height: 20px; /* 높이 조정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    border-radius: 50%; /* 동그란 모양 */
+    background-color: red; /* 배경 색상 */
+    color: white; /* 텍스트 색상 */
+    margin-top: auto; /* 상단 마진 조정 */
+}
+
+.close-button:hover {
+    background-color: darkred; /* 마우스 오버 시 배경 색상 변경 */
+}
+
+h2{
+    position:center;
+}
+
+h1 {
+    color: #333;
+}
+
+.input-area {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.input-area button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    background: #f9f9f9;
+    margin-bottom: 8px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.todo-list li::after {
+    content: '삭제';
+    color: white;
+    background-color: #ff6b6b;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+h3 {
+    width: 180px; /* 고정 너비 혹은 max-width를 사용하여 최대 너비를 지정 */
+    white-space: nowrap; /* 텍스트가 한 줄로만 표시되도록 함 */
+    overflow: hidden; /* 내용이 넘칠 경우 숨김 처리 */
+    text-overflow: ellipsis; /* 넘치는 텍스트를 말줄임표로 표시 */
+}
+
+
+
+/* 글자수가 많을 경우 말줄임표 처리 */
+.not-list li span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}

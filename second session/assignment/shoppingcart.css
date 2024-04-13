@@ -1,0 +1,89 @@
+.hamburger-icon {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+.header-icon{
+    cursor: pointer;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    
+    background-color: white;
+}
+
+
+table {
+    border-top: solid 1.5px black;
+    border-left: solid 1.5px black ;
+    border-right: solid 1.5px black;
+    border-collapse: collapse;
+    width: 50%;
+    font-size: 14px;
+    margin-left: 280px;
+}
+  
+thead {
+    text-align: center;
+    font-weight: bold;
+}
+  
+tbody {
+    font-size: 12px;
+}
+  
+td {
+    padding: 15px 5px;
+    border-bottom: 1px solid lightgrey;
+}
+  
+.cart__mainbtns {
+    width: 200px;
+    height: 200px;
+    padding-top: 40px;
+    display: block;
+    margin: auto;
+}
+button.cart__buy{
+    width: 50px; /* 버튼의 너비 */
+    height: 30px; /* 버튼의 높이 */
+    font-size: 12px; /* 버튼 내 텍스트의 크기 */
+    font-weight: bold;
+    background-color: greenyellow; /* 배경색 */
+    border: 2px solid #000000; /* 테두리 */
+    color: #000000; /* 글자색 */
+    padding: 3px; /* 패딩 */
+  
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    transition: all 0.3s ease; /* 애니메이션 효과 */
+}
+  
+button.cart__buy:hover {
+    background-color: #ff0000; /* 호버 시 배경색 */
+    color: #ffffff; /* 호버 시 글자색 */
+}
+button.cart__home{
+    width: 50px; /* 버튼의 너비 */
+    height: 30px; /* 버튼의 높이 */
+    font-size: 12px; /* 버튼 내 텍스트의 크기 */
+    font-weight: bold;
+    background-color: rebeccapurple; /* 배경색 */
+    border: 2px solid #000000; /* 테두리 */
+    color: white; /* 글자색 */
+    padding: 3px; /* 패딩 */
+  
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    transition: all 0.3s ease; /* 애니메이션 효과 */
+}
+  
+button.cart__home:hover {
+    background-color: #ff0000; /* 호버 시 배경색 */
+    color: #ffffff; /* 호버 시 글자색 */
+}

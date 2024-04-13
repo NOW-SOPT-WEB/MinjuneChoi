@@ -12,10 +12,21 @@
         <h1>민준이의 쇼핑몰</h1>
         
         <div class="hamburger-menu">
-            <button class="hamburger-icon" type="button">
+            <button id= "hamburger-icon"class="hamburger-icon" type="button">
                 ☰
             </button>
-                   
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&rarr;</span>
+                    <nav>
+                        <ul>
+                            <li><a href="#" id="favorite">관리 상품 목록</a></li>
+                            <li><a href="#" id="manage">관리자 페이지</a></li>
+                            <li><a href="shopping basket.html" id="cart">장바구니</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
        
@@ -27,6 +38,8 @@
             <li><a href="#category3">의류</a></li>
         </ul>
     </nav>
+
+    
     <main>
         <div>
             <h2>전체상품</h2>
@@ -183,6 +196,7 @@
     <footer>
         <p>&copy; 2024 나만의 쇼핑몰. Sopt 화이팅.</p>
     </footer>
+    <script src="shoppingmall.js"></script>
 </body>
-</html>
+
 

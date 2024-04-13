@@ -6,6 +6,65 @@ body {
     display: none;
 }
 
+.header-icon{
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: cornflowerblue;
+   
+    z-index: 2;
+}
+
+.modal-content {
+    padding: 20px;
+    
+}
+
+.close {
+    cursor: pointer;
+    float: left;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#cart:hover {
+    background-color: yellowgreen;
+    color : white; /* 마우스 오버 시 배경 색상 변경 */
+}
+
+#favorite:hover {
+    background-color: yellowgreen;
+    color : white; /* 마우스 오버 시 배경 색상 변경 */
+}
+#manage:hover {
+    background-color: yellowgreen;
+    color : white; /* 마우스 오버 시 배경 색상 변경 */
+}
+
+
+
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
 
 .hamburger-icon {
     background: none;

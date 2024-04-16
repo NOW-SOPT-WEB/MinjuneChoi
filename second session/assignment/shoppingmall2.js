@@ -1,5 +1,6 @@
 // 상품 정보를 담고 있는 배열
-const products = [
+
+const items = [
     { 
         category : "운동용품",
       imgSrc: "./static/img/자전거.jpg",
@@ -73,9 +74,10 @@ const products = [
   ];
   
   // 상품 정보 배열을 순회하며 요소를 생성하는 함수
-products.forEach(product => {
+items.forEach(product => {
     const divTag = document.createElement("div");
     divTag.classList.add("product");
+    divTag.setAttribute("id",product.name);
   
     const imgTag = document.createElement("img");
     imgTag.src = product.imgSrc;
@@ -151,7 +153,7 @@ function renderProducts(products) {
   }
   
   // 상품 목록 랜더링 함수 호출
-  renderProducts(products);
+  renderProducts(items);
   
 //여가생활
 function renderProduct1s(products) {
@@ -200,7 +202,7 @@ function renderProduct1s(products) {
     });
   }
   // 상품 목록 랜더링 함수 호출
-  renderProduct1s(products);
+  renderProduct1s(items);
 
 
 
@@ -251,4 +253,10 @@ function renderProduct1s(products) {
     });
   }
   // 상품 목록 랜더링 함수 호출
-  renderProduct2s(products);
+  renderProduct2s(items);
+
+
+
+
+
+  

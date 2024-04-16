@@ -28,6 +28,7 @@ table {
     width: 50%;
     font-size: 14px;
     margin-left: 280px;
+    margin-top: 280px;
 }
   
 thead {
@@ -43,6 +44,11 @@ th {
     padding: 15px 5px;
     border-bottom: 1px solid lightgrey;
 }
+.product1 img {
+    width: 100px; /* 원하는 너비로 설정 */
+    height: auto; /* 높이를 자동으로 조절하여 비율 유지 */
+}
+
   
 .cart__mainbtns {
     width: 200px;

@@ -35,8 +35,6 @@ function displayProductInfo() {
     productNamep.innerText = productPrice;
     
 
-    console.log(imgSrc, imgAlt);
-
 }
 
   

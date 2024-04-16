@@ -9,6 +9,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    var cart__home = document.querySelector('.cart__home');
+
+    if (cart__home) {
+        cart__home.addEventListener('click', function() {
+            
+            window.location.href = 'shoppingmall.html';
+        });
+    }
+});
+
+
+
+
 
 
 // 페이지가 로드될 때 실행되는 함수
@@ -61,4 +75,52 @@ function formatPrice(price) {
 
 
 
-  
+ //모달 함수
+const cartBuyButton = document.querySelector('.cart__buy');
+const modal = document.getElementById('cartModal');
+const closeBtn = document.querySelector('.close-button');
+const confirmPurchaseBtn = document.getElementById('confirmPurchase');
+
+cartBuyButton.onclick = function() {
+    modal.style.display = "block";
+    displayCartItemsInModal(); // 모달 내에 장바구니 목록을 표시하는 함수
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+confirmPurchaseBtn.onclick = function() {
+    alert("구매가 완료되었습니다!");
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function displayCartItemsInModal() {
+    const cartItems = JSON.parse(localStorage.getItem('mylist')) || [];
+    const cartItemsContainer = document.getElementById('cartItems');
+    const totalPriceElement = document.getElementById('totalPrice');
+    let total = 0;
+    
+    cartItemsContainer.innerHTML = ''; // 기존 목록을 비움
+    cartItems.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.innerHTML = `
+            <img src="${item.imgSrc}" class="product-image" style="width:30px; height:30px;">
+            <span>${item.name} - ${formatPrice(item.price)}</span>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+        let priceint = parseFloat(item.price);
+        total += priceint;
+    });
+    totalPriceElement.textContent = `총 금액: ${formatPrice(total)}`;
+}
+
+
+
+

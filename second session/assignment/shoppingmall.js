@@ -4,14 +4,14 @@ const copyeditems = [
       imgSrc: "./static/img/자전거.jpg",
       altText: "자전거",
       name: "자전거",
-      price: "10,000원"
+      price: "10000"
     },
     {
         category : "운동용품",
       imgSrc: "./static/img/아령.jpg",
       altText: "아령",
       name: "아령",
-      price: "5,000원"
+      price: "5000"
     },
 
     {

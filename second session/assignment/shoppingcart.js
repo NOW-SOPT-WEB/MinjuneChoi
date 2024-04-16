@@ -12,29 +12,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // 페이지가 로드될 때 실행되는 함수
-window.onload = function() {
-    displayProductInfo();
-};
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    displayCartItems();
+});
 
-// localStorage와 sessionStorage에서 상품 정보를 불러와 화면에 표시하는 함수
-function displayProductInfo() {
-    // localStorage에서 상품 정보 불러오기(영구적)
-    var imgSrc = localStorage.getItem('productImgSrc');
-    var productName = localStorage.getItem('productName');
-    var productPrice = localStorage.getItem('productPrice');
-    
+function displayCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('mylist')) || [];
+    const cartTableBody = document.querySelector('#cart_container tbody');
+    cartTableBody.innerHTML = ''; // 기존 목록을 비움
 
-    // HTML 요소 선택
-    var productImg = document.querySelector('.product1 img');
-    var productName1 = document.querySelector('.product1 h3');
-    var productNamep=document.querySelector('.product1 p')
+    cartItems.forEach((item, index) => {
+        const row = document.createElement('tr');
 
-    // 불러온 상품 정보를 HTML 요소에 할당
-    productImg.src = imgSrc;
-    productName1.innerText= productName;
-    productNamep.innerText = productPrice;
-    
+        row.innerHTML = `
+            <td><input type="checkbox"></td>
+            <td>
+                <div class="product1">
+                    <img src="${item.imgSrc}" alt="상품 이미지" class="product-image">
+                    <h3>${item.name}</h3>
+                </div>
+            </td>
+            <td>
+                <div class="product-price">${formatPrice(item.price)}</div>
+            </td>
+            <td>
+                <div class="product-category">${item.category}</div>
+            </td>
+            <td>
+                <div class="delete-btn" onclick="removeItemFromCart(${index})">X</div>
+            </td>
+        `;
 
+        cartTableBody.appendChild(row);
+    });
 }
+
+function removeItemFromCart(index) {
+    let cartItems = JSON.parse(localStorage.getItem('mylist')) || [];
+    cartItems.splice(index, 1); // 특정 인덱스의 품목을 삭제
+    localStorage.setItem('mylist', JSON.stringify(cartItems)); // 업데이트된 목록을 다시 저장
+    displayCartItems(); // 목록을 다시 표시
+}
+
+function formatPrice(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
 
   

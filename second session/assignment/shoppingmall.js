@@ -1,4 +1,4 @@
-const copyeditems = [
+const COPYEDITEMS = [
     { 
         category : "운동용품",
       imgSrc: "./static/img/자전거.jpg",
@@ -40,36 +40,35 @@ const copyeditems = [
       imgSrc: "./static/img/인형.jpg",
       altText: "인형",
       name: "인형",
-      price: "50000원"
+      price: "50000"
     },
     {
         category:"의류",
       imgSrc: "./static/img/모자.jpg",
       altText: "모자",
       name: "모자",
-      price: "30,000원"
+      price: "30000"
     },
     {
         category:"의류",
       imgSrc: "./static/img/청바지.jpg",
       altText: "청바지",
       name: "청바지",
-      price: "20,000원"
+      price: "20000"
     },
     {
         category:"의류",
       imgSrc: "./static/img/th.jpg",
       altText: "치마",
       name: "치마",
-      price: "20,000원"
+      price: "20000"
     }
-
-
-
-
 
     // 여기에 더 많은 상품 정보를 추가할 수 있습니다.
   ];
+
+
+  
 
 document.addEventListener('DOMContentLoaded', function() {
     var sidebarBtn = document.getElementById('hamburger-icon');
@@ -104,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isConfirmed) {
                 // 여기서 'copyeditems'는 어디선가 정의되어 있어야 합니다.
             
-                const filterarray = copyeditems.filter(item => item.name === event.currentTarget.getAttribute("id"));
+                const filterarray = COPYEDITEMS.filter(item => item.name === event.currentTarget.getAttribute("id"));
                 console.log(filterarray);
 
                 if (filterarray.length > 0) {

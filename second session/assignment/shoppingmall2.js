@@ -1,6 +1,6 @@
 // 상품 정보를 담고 있는 배열
 
-const items = [
+const ITEMS = [
     { 
         category : "운동용품",
       imgSrc: "./static/img/자전거.jpg",
@@ -74,7 +74,7 @@ const items = [
   ];
   
   // 상품 정보 배열을 순회하며 요소를 생성하는 함수
-items.forEach(product => {
+ITEMS.forEach(product => {
     const divTag = document.createElement("div");
     divTag.classList.add("product");
     divTag.setAttribute("id",product.name);
@@ -125,6 +125,7 @@ function displayCategory(category) {
     // 모든 섹션을 숨깁니다.
     document.querySelectorAll('.category').forEach(section => {
         section.style.display = 'none';
+        
     });
     
     // 선택된 카테고리만 표시합니다.
@@ -143,6 +144,7 @@ function renderProducts(products) {
       // li 요소 생성
       const liTag = document.createElement("li");
       liTag.classList.add("product");
+      liTag.setAttribute("id",product.name);
   
       // img 요소 생성
       const imgTag = document.createElement("img");
@@ -180,7 +182,7 @@ function renderProducts(products) {
   }
   
   // 상품 목록 랜더링 함수 호출
-  renderProducts(items);
+  renderProducts(ITEMS);
   
 //여가생활
 function renderProduct1s(products) {
@@ -193,6 +195,7 @@ function renderProduct1s(products) {
       // li 요소 생성
       const liTag = document.createElement("li");
       liTag.classList.add("product");
+      liTag.setAttribute("id",product.name);
   
       // img 요소 생성
       const imgTag = document.createElement("img");
@@ -229,7 +232,7 @@ function renderProduct1s(products) {
     });
   }
   // 상품 목록 랜더링 함수 호출
-  renderProduct1s(items);
+  renderProduct1s(ITEMS);
 
 
 
@@ -244,6 +247,7 @@ function renderProduct1s(products) {
       // li 요소 생성
       const liTag = document.createElement("li");
       liTag.classList.add("product");
+      liTag.setAttribute("id",product.name);
   
       // img 요소 생성
       const imgTag = document.createElement("img");

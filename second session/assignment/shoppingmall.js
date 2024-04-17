@@ -19,28 +19,28 @@ const copyeditems = [
       imgSrc: "./static/img/허리보호대.jpg",
       altText: "허리보호대",
       name: "허리보호대",
-      price: "6,000원"      
+      price: "6000"      
     },
     {
         category : "여가생활",
         imgSrc: "./static/img/책.jpg",
         altText: "책",
         name: "책",
-        price: "6,000원"    
+        price: "6000"    
     },
     {
         category:"여가생활",
         imgSrc: "./static/img/텐트.jpg",
         altText: "텐트",
         name: "텐트",
-        price: "100,000원" 
+        price: "100000" 
     },
     {
         category:"여가생활",
       imgSrc: "./static/img/인형.jpg",
       altText: "인형",
       name: "인형",
-      price: "50,000원"
+      price: "50000원"
     },
     {
         category:"의류",

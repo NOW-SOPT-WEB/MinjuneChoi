@@ -55,8 +55,27 @@ thead {
 tbody {
     font-size: 12px;
 }
+
+
+.checkbox {
+    margin-left: 60px;
+}
+
+.delete-btn{
+    margin-right: 10px;
+    margin-left: 20px;
+}
+.product-price{
+    padding-right: 40px;
+}
+
+.product-category{
+
+    padding-right: 20px;
+}
 .product1{
-    margin-left: 70px;
+    padding-left: 10px;
+    margin-bottom: 10px
 }
 th {
     padding: 15px 5px;
@@ -67,7 +86,9 @@ th {
     width: 100px; /* 원하는 너비로 설정 */
     height: auto; /* 높이를 자동으로 조절하여 비율 유지 */
 }
-
+.product1 h3{
+    margin-right: 20px;
+}
   
 .cart__mainbtns {
     width: 200px;
@@ -89,7 +110,9 @@ button.cart__buy{
     cursor: pointer; /* 마우스 오버 시 커서 변경 */
     transition: all 0.3s ease; /* 애니메이션 효과 */
 }
-  
+.delete-btn{
+    cursor: pointer;
+}
 button.cart__buy:hover {
     background-color: #ff0000; /* 호버 시 배경색 */
     color: #ffffff; /* 호버 시 글자색 */
@@ -115,16 +138,16 @@ button.cart__home:hover {
 
 /*모달정의*/
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 .modal-content {

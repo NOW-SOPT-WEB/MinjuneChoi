@@ -40,21 +40,29 @@ function displayCartItems() {
         const row = document.createElement('tr');
 
         row.innerHTML = `
-            <td><input type="checkbox"></td>
+            <td><input type="checkbox" class = "checkbox"></td>
             <td>
                 <div class="product1">
                     <img src="${item.imgSrc}" alt="상품 이미지" class="product-image">
-                    <h3>${item.name}</h3>
+                    
                 </div>
             </td>
+            <td>    
+                <div class="product1">
+                    <h4>${item.name}</h4>
+                </div>
+            </td>
+
+
+
             <td>
-                <div class="product-price">${formatPrice(item.price)}</div>
+                <div class="product-price">${formatPrice(item.price)}원</div>
             </td>
             <td>
                 <div class="product-category">${item.category}</div>
             </td>
             <td>
-                <div class="delete-btn" onclick="removeItemFromCart(${index})">X</div>
+                <div class="delete-btn" type ="button" onclick="removeItemFromCart(${index})">삭제</div>
             </td>
         `;
 
@@ -112,13 +120,13 @@ function displayCartItemsInModal() {
         const itemElement = document.createElement('div');
         itemElement.innerHTML = `
             <img src="${item.imgSrc}" class="product-image" style="width:30px; height:30px;">
-            <span>${item.name} - ${formatPrice(item.price)}</span>
+            <span>${item.name} - ${formatPrice(item.price)}원</span>
         `;
         cartItemsContainer.appendChild(itemElement);
         let priceint = parseFloat(item.price);
         total += priceint;
     });
-    totalPriceElement.textContent = `총 금액: ${formatPrice(total)}`;
+    totalPriceElement.textContent = `총 금액: ${formatPrice(total)}원`;
 }
 
 

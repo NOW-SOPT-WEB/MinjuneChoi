@@ -107,11 +107,12 @@ ITEMS.forEach(product => {
     const sectionTag = document.querySelector("#all");
     sectionTag.appendChild(divTag);
 });
-  
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // 카테고리 링크 클릭 이벤트
-    document.querySelectorAll('nav ul div li a').forEach(link => {
+    document.querySelectorAll('.filtercategory').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
 
@@ -125,12 +126,14 @@ function displayCategory(category) {
     // 모든 섹션을 숨깁니다.
     document.querySelectorAll('.category').forEach(section => {
         section.style.display = 'none';
-        
     });
     
     // 선택된 카테고리만 표시합니다.
-    document.querySelector('#' + category).style.display = '';
+    
+    document.querySelector('#' + category).style.display = 'flex';
 }
+
+
 
 
 // 운동용품 함수
@@ -284,7 +287,7 @@ function renderProduct1s(products) {
     });
   }
   // 상품 목록 랜더링 함수 호출
-  renderProduct2s(items);
+  renderProduct2s(ITEMS);
 
 
 

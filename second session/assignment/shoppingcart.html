@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쇼핑몰 장바구니</title>
+    <link rel="stylesheet" href="shoppingcart.css" />
+  </head>
+
+  <header>
+    <div class="header-icon">🛍️</div>
+    <h1>장바구니 페이지</h1>
+
+    <div class="hamburger-menu">
+      <button class="hamburger-icon" type="button">☰</button>
+    </div>
+  </header>
+
+  <body>
+    <table id="cart_container" class="cart_list">
+      <form>
+        <thead>
+          <tr>
+            <th><input type="checkbox" /></th>
+            <th>상품정보</th>
+            <th>상품금액</th>
+            <th>카테고리</th>
+            <th>비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="product1">
+                <img src="./static/img/아령.jpg" alt="기본" />
+              </div>
+            </td>
+
+            <td>
+              <div class="product1">
+                <h3>아령</h3>
+              </div>
+            </td>
+
+            <td>
+              <div class="product1"></div>
+              <p>가격: 5,000원</p>
+            </td>
+          </tr>
+        </tbody>
+
+        <tfoot></tfoot>
+      </form>
+    </table>
+
+    <div class="cart__mainbtns">
+      <button class="cart__buy" type="button">buy</button>
+      <button class="cart__home" type="button">home</button>
+      <div id="cartModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">×</span>
+
+          <div id="cartItems"></div>
+          <p id="totalPrice"></p>
+          <button id="confirmPurchase" type="button">구매하기</button>
+        </div>
+      </div>
+    </div>
+    <script src="shoppingcart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 쇼핑몰</title>
+    <link rel="stylesheet" href="shoppingmall.css">
+</head>
+<body>
+    <header>   
+        <div class="header-icon">🛍️</div>
+        <h1>민준이의 쇼핑몰</h1>
+        
+        <div class="hamburger-menu">
+            <button id= "hamburger-icon" class="hamburger-icon" type="button">
+                ☰
+            </button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&rarr;</span>
+                    <nav>
+                        <ul>
+                            <li><a href="#" id="favorite">관리 상품 목록</a></li>
+                            <li><a href="#" id="manage">관리자 페이지</a></li>
+                            <li><a href="shoppingcart.html" id="cart">장바구니</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+       
+    <nav>
+        <ul>
+            <div><li><a class= "filtercategory" href="#all">전체</a></li></div>
+            <div><li><a class= "filtercategory"href="#category1">운동용품</a></li></div>
+            <div><li><a class= "filtercategory"href="#category2">여가생활</a></li></div>
+            <div><li><a class= "filtercategory"href="#category3">의류</a></li></div>
+        </ul>
+    </nav>
+
+    
+    <main>
+        <div>
+            <h2>전체상품</h2>
+            <section id="all" class="category">
+        
+                
+            </section>
+        </div>
+            
+            
+        <div>
+            
+            <h2>운동 용품</h2>
+            <ul id="category1" class="category" >
+               
+            </ul>   
+               
+            
+        </div>
+
+
+        <div>
+            <h2>여가생활</h2>
+            <ul id="category2" class="category">
+                     
+            </ul>
+        </div>
+        <div>
+            <h2>의류</h2>
+            <ul id="category3" class="category">
+                 
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 나만의 쇼핑몰. Sopt 화이팅.</p>
+    </footer>
+    <script src="shoppingmall.js"></script>
+    
+    <script src="shoppingmall2.js"></script>
+</body>
+
+

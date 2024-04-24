@@ -1,0 +1,173 @@
+.hamburger-icon {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+.header-icon{
+    cursor: pointer;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    
+    background-color: white;
+}
+
+
+table {
+    border-top: solid 1.5px black;
+    border-left: solid 1.5px black ;
+    border-right: solid 1.5px black;
+    border-collapse: collapse;
+    width: 50%;
+    font-size: 14px;
+    margin-left: 280px;
+    margin-top: 280px;
+}
+  
+thead {
+    text-align: center;
+    font-weight: bold;
+}
+
+.cart_list tbody {
+    display: block;
+    max-height: 300px; /* 원하는 최대 높이로 설정 */
+    overflow-y: auto;
+}
+
+.cart_list thead, .cart_list tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed; /* 테이블 셀의 너비가 일정하게 유지되도록 함 */
+}
+
+.cart_list thead {
+    width: calc( 100% - 1em ); /* 스크롤 바 너비를 고려 */
+}
+
+tbody {
+    font-size: 12px;
+}
+
+
+.checkbox {
+    margin-left: 60px;
+}
+
+.delete-btn{
+    margin-right: 10px;
+    margin-left: 20px;
+}
+.product-price{
+    padding-right: 40px;
+}
+
+.product-category{
+
+    padding-right: 20px;
+}
+.product1{
+    padding-left: 10px;
+    margin-bottom: 10px
+}
+th {
+    padding: 15px 5px;
+    border-bottom: 1px solid lightgrey;
+}
+.product1 img {
+    
+    width: 100px; /* 원하는 너비로 설정 */
+    height: auto; /* 높이를 자동으로 조절하여 비율 유지 */
+}
+.product1 h3{
+    margin-right: 20px;
+}
+  
+.cart__mainbtns {
+    width: 200px;
+    height: 200px;
+    padding-top: 40px;
+    display: block;
+    margin: auto;
+}
+button.cart__buy{
+    width: 50px; /* 버튼의 너비 */
+    height: 30px; /* 버튼의 높이 */
+    font-size: 12px; /* 버튼 내 텍스트의 크기 */
+    font-weight: bold;
+    background-color: greenyellow; /* 배경색 */
+    border: 2px solid #000000; /* 테두리 */
+    color: #000000; /* 글자색 */
+    padding: 3px; /* 패딩 */
+  
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    transition: all 0.3s ease; /* 애니메이션 효과 */
+}
+.delete-btn{
+    cursor: pointer;
+}
+button.cart__buy:hover {
+    background-color: #ff0000; /* 호버 시 배경색 */
+    color: #ffffff; /* 호버 시 글자색 */
+}
+button.cart__home{
+    width: 50px; /* 버튼의 너비 */
+    height: 30px; /* 버튼의 높이 */
+    font-size: 12px; /* 버튼 내 텍스트의 크기 */
+    font-weight: bold;
+    background-color: rebeccapurple; /* 배경색 */
+    border: 2px solid #000000; /* 테두리 */
+    color: white; /* 글자색 */
+    padding: 3px; /* 패딩 */
+  
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    transition: all 0.3s ease; /* 애니메이션 효과 */
+}
+  
+button.cart__home:hover {
+    background-color: #ff0000; /* 호버 시 배경색 */
+    color: #ffffff; /* 호버 시 글자색 */
+}
+
+/*모달정의*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var headerIcon = document.querySelector('.header-icon');
+    let headerIcon = document.querySelector('.header-icon');
 
     if (headerIcon) {
         headerIcon.addEventListener('click', function() {

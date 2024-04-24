@@ -78,9 +78,8 @@ function removeItemFromCart(index) {
 }
 
 function formatPrice(price) {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return Number(price).toLocaleString() // price가 이미 Number 타입이라면 Number는 생략해도됩니다
 }
-
 
 
  //모달 함수

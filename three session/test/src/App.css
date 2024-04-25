@@ -1,0 +1,117 @@
+/* 전체 페이지 스타일링 */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Comic Sans MS', 'Arial', sans-serif;
+  background: #EED1D1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* 게임 상태 바 */
+.game-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #FFF3F3;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
+.game-status-bar h1 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.game-status-bar button {
+  padding: 10px 20px;
+  background-color: #FFC1C1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* 카드 그리드 스타일 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 4개의 칼럼으로 구성된 그리드 */
+  gap: 16px;
+}
+
+/* 카드 스타일링 */
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card > div {
+  width: 150px; /* 이 부분은 카드의 크기에 따라 조정하세요 */
+  height: 150px; /* 이 부분은 카드의 크기에 따라 조정하세요 */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.front {
+  background: #FFC1C1;
+  
+}
+
+.back {
+  background: #FFF3F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0; /* 이미지가 있을 경우 텍스트를 숨기기 위함 */
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* 여기에 필요한 추가 스타일을 계속 추가하세요. */
+

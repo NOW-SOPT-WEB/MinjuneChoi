@@ -86,7 +86,14 @@ function App() {
         ))}
       </div>
       <p>턴 수: {turns}</p>
-      
+      {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>추카추카 게임 Clear!</h2>
+            <button onClick={shuffleCards}>게임으로 돌아가기</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

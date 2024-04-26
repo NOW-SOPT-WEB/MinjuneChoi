@@ -140,7 +140,9 @@ function App() {
     { src: "./img/요네1.jpg", matched: false },
     { src: "./img/유미1.jpg", matched: false },
     { src: "./img/티모1.jpg", matched: false },
-  ];
+    { src: "./img/그웬1.jpg", matched: false},
+    {src : "./img/케이틀린.jpg", matched : false}
+  ];//객체 배열~바꾸는 것이 좋다.
 
   useEffect(() => {
     shuffleCards();
@@ -159,12 +161,17 @@ function App() {
   }, [choiceOne, choiceTwo]);
 
   useEffect(() => {
-    if (matchedPairs === cardImages.length) {
+    if (matchedPairs ===5) { // 5 같은 숫자들 따로 상수폴더에서 관리 고고 easy: 5, normal: 7 등ㄷ
       setShowModal(true);
+      console.log('matchedPairs', matchedPairs);
     }
+    console.log('cardImages.length', cardImages.length);
   }, [matchedPairs]);
 
-  const shuffleCards = () => {
+  
+
+
+  /*const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
       .map(card => ({ ...card, id: Math.random(), flipped:false}));
@@ -174,7 +181,27 @@ function App() {
     setCards(shuffledCards);
     setTurns(0);
     setShowModal(false);
-  };
+  };*/
+
+const shuffleCards = () => {
+  // 무작위로 5장의 카드 이미지를 선택하고 중복시킵니다.
+  const selectedCardImages = [...cardImages]
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 5);
+  
+  const shuffledCards = [...selectedCardImages, ...selectedCardImages]
+    .sort(() => Math.random() - 0.5)
+    .map((card, index) => ({ ...card, id: index, flipped: false }));
+
+    // 게임 상태를 초기화합니다.
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setMatchedPairs(0);
+    setCards(shuffledCards);
+    setTurns(0);
+    setShowModal(false);
+};
+
 
   const resetTurn = () => {
     setChoiceOne(null);

@@ -161,7 +161,7 @@ function App() {
   }, [choiceOne, choiceTwo]);
 
   useEffect(() => {
-    if (matchedPairs ===5) { // 5 같은 숫자들 따로 상수폴더에서 관리 고고 easy: 5, normal: 7 등ㄷ
+    if (matchedPairs ===5) { // 5 같은 숫자들 따로 상수폴더에서 관리 고고 easy: 5, normal: 7 
       setShowModal(true);
       console.log('matchedPairs', matchedPairs);
     }
@@ -170,18 +170,6 @@ function App() {
 
   
 
-
-  /*const shuffleCards = () => {
-    const shuffledCards = [...cardImages, ...cardImages]
-      .sort(() => Math.random() - 0.5)
-      .map(card => ({ ...card, id: Math.random(), flipped:false}));
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setMatchedPairs(0);
-    setCards(shuffledCards);
-    setTurns(0);
-    setShowModal(false);
-  };*/
 
 const shuffleCards = () => {
   // 무작위로 5장의 카드 이미지를 선택하고 중복시킵니다.

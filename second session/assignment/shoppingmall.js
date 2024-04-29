@@ -1,14 +1,14 @@
-const COPYEDITEMS = [
+export const COPYEDITEMS = [
     { 
         category : "운동용품",
-      imgSrc: "./static/img/자전거.jpg",
+      imgSrc: "./static2/img/자전거.jpg",
       altText: "자전거",
       name: "자전거",
       price: "10000"
     },
     {
         category : "운동용품",
-      imgSrc: "./static/img/아령.jpg",
+      imgSrc: "./static2/img/아령.jpg",
       altText: "아령",
       name: "아령",
       price: "5000"
@@ -16,49 +16,49 @@ const COPYEDITEMS = [
 
     {
         category : "운동용품",
-      imgSrc: "./static/img/허리보호대.jpg",
+      imgSrc: "./static2/img/허리보호대.jpg",
       altText: "허리보호대",
       name: "허리보호대",
       price: "6000"      
     },
     {
         category : "여가생활",
-        imgSrc: "./static/img/책.jpg",
+        imgSrc: "./static2/img/책.jpg",
         altText: "책",
         name: "책",
         price: "6000"    
     },
     {
         category:"여가생활",
-        imgSrc: "./static/img/텐트.jpg",
+        imgSrc: "./static2/img/텐트.jpg",
         altText: "텐트",
         name: "텐트",
         price: "100000" 
     },
     {
         category:"여가생활",
-      imgSrc: "./static/img/인형.jpg",
+      imgSrc: "./static2/img/인형.jpg",
       altText: "인형",
       name: "인형",
       price: "50000"
     },
     {
         category:"의류",
-      imgSrc: "./static/img/모자.jpg",
+      imgSrc: "./static2/img/모자.jpg",
       altText: "모자",
       name: "모자",
       price: "30000"
     },
     {
         category:"의류",
-      imgSrc: "./static/img/청바지.jpg",
+      imgSrc: "./static2/img/청바지.jpg",
       altText: "청바지",
       name: "청바지",
       price: "20000"
     },
     {
         category:"의류",
-      imgSrc: "./static/img/th.jpg",
+      imgSrc: "./static2/img/th.jpg",
       altText: "치마",
       name: "치마",
       price: "20000"
@@ -71,9 +71,9 @@ const COPYEDITEMS = [
   
 
 document.addEventListener('DOMContentLoaded', function() {
-    var sidebarBtn = document.getElementById('hamburger-icon');
-    var modal = document.getElementById('myModal');
-    var closeBtn = document.getElementsByClassName('close')[0];
+    const sidebarBtn = document.getElementById('hamburger-icon');
+    const modal = document.getElementById('myModal');
+    const closeBtn = document.getElementsByClassName('close')[0];
 
     sidebarBtn.onclick = function() {
         modal.style.display = "block";
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // 저장된 값이 없다면 빈 배열로 초기화
             let array = JSON.parse(localStorage.getItem("mylist")) || [];
 
-            console.log(event.currentTarget.getAttribute("id"));
+            
 
             // confirm 대화 상자를 사용하여 사용자의 응답을 얻음
             const isConfirmed = confirm('이 상품을 장바구니페이지에 추가하시겠습니까?');
@@ -107,10 +107,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log(filterarray);
 
                 if (filterarray.length > 0) {
-                    array.push(filterarray[0]);
+                    
+                    const newArray = [...array, filterarray[0]];
 
                     // 로컬 스토리지에 저장. 여기서는 수정된 배열을 다시 저장합니다.
-                    localStorage.setItem("mylist", JSON.stringify(array));
+                    localStorage.setItem("mylist", JSON.stringify(newArray));
 
                     alert('상품이 장바구니페이지에 추가되었습니다.');
                 }

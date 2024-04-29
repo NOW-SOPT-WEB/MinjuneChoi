@@ -18,7 +18,10 @@ header{
     
     background-color: white;
 }
-
+.product-imagae{
+    width: 30px;
+    height: 30px; ;
+}
 
 table {
     border-top: solid 1.5px black;

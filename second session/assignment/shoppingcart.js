@@ -93,9 +93,9 @@ cartBuyButton.onclick = function() {
     displayCartItemsInModal(); // 모달 내에 장바구니 목록을 표시하는 함수
 }
 
-closeBtn.onclick = function() {
+closeBtn.onclick("click" , function() {
     modal.style.display = "none";
-}
+})
 
 confirmPurchaseBtn.onclick = function() {
     alert("구매가 완료되었습니다!");
@@ -118,7 +118,7 @@ function displayCartItemsInModal() {
     cartItems.forEach(item => {
         const itemElement = document.createElement('div');
         itemElement.innerHTML = `
-            <img src="${item.imgSrc}" class="product-image" style="width:30px; height:30px;">
+            <img src="${item.imgSrc}" class="product-image" >
             <span>${item.name} - ${formatPrice(item.price)}원</span>
         `;
         cartItemsContainer.appendChild(itemElement);

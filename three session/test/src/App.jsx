@@ -161,7 +161,7 @@ function App() {
   }, [choiceOne, choiceTwo]);
 
   useEffect(() => {
-    if (matchedPairs ===5) { // 5 같은 숫자들 따로 상수폴더에서 관리 고고 easy: 5, normal: 7 
+    if (matchedPairs ===5) { 
       setShowModal(true);
       console.log('matchedPairs', matchedPairs);
     }

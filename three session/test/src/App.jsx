@@ -1,6 +1,9 @@
 import  { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { createGlobalStyle, ThemeProvider, styled } from 'styled-components';
+import cardImages from './card';
+
+console.log(cardImages);
 
 const GlobalStyle = createGlobalStyle`
   body, html {
@@ -134,15 +137,7 @@ function App() {
   const [matchedPairs, setMatchedPairs] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  const cardImages = [
-    { src: "./img/가렌1.jpg", matched: false },
-    { src: "./img/다이애나1.jpg", matched: false }, 
-    { src: "./img/요네1.jpg", matched: false },
-    { src: "./img/유미1.jpg", matched: false },
-    { src: "./img/티모1.jpg", matched: false },
-    { src: "./img/그웬1.jpg", matched: false},
-    {src : "./img/케이틀린.jpg", matched : false}
-  ];//객체 배열~바꾸는 것이 좋다.
+  //객체 배열~바꾸는 것이 좋다.
 
   useEffect(() => {
     shuffleCards();

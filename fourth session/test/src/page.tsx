@@ -132,7 +132,7 @@ const Page: React.FC = () => {
           <button type="submit">비밀번호 변경</button>
         </form>
       )}
-      <button onClick={() => navigate("/")} className="homeButton">
+      <button onClick={() => navigate("/home/:memberId")} className="homeButton">
         홈으로
       </button>
     </div>

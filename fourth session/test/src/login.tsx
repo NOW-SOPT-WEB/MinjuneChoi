@@ -1,5 +1,8 @@
 import React, { useState, FormEvent, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Container, LoginCard, LoginImage, LoginInput, LoginButton } from './loginstyles';
+
+
 
 const LoginPage: React.FC = () => {
   const [userId, setUserId] = useState<string>("");
@@ -46,41 +49,29 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <>
-      <style>
-        {`
-        img {
-          width: 150px;  
-          height: auto;  
-          display: block; 
-          margin: 0 auto 20px;
-        }
-      `}
-      </style>
-      <form onSubmit={handleLogin}>
-        <img src="./햄스터.jpg" alt="로그인 이미지" />
-        <label>
-          ID:
-          <input
+    <Container>
+      <LoginCard>
+        <LoginImage src="./햄스터.jpg" alt="로그인 이미지" />
+        <form onSubmit={handleLogin}>
+          <label>ID:</label>
+          <LoginInput
             type="text"
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
           />
-        </label>
-        <label>
-          PW:
-          <input
+          <label>PW:</label>
+          <LoginInput
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </label>
-        <button type="submit">로그인</button>
-        <button type="button" onClick={() => navigate("/signup")}>
-          회원가입
-        </button>
-      </form>
-    </>
+          <LoginButton type="submit">로그인</LoginButton>
+          <LoginButton type="button" onClick={() => navigate("/signup")}>
+            회원가입
+          </LoginButton>
+        </form>
+      </LoginCard>
+    </Container>
   );
 };
 

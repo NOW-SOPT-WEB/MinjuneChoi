@@ -1,19 +1,31 @@
 
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { Container, StyledImage, StyledLink, Title } from './styles/homestyles';
+import { Link, useParams } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
   const { memberId } = useParams<{ memberId: string }>();
 
 
   return (
-    <Container>
-      <StyledImage src="/솝트.jpg" alt="Welcome Image" />
-      <Title>Main Page</Title>
-      <StyledLink to="/signup">회원가입</StyledLink>
-      <StyledLink to={`/page/${memberId}`}>내정보</StyledLink>
-    </Container>
+    <>
+      <style>
+        {`
+          
+          img {
+            width: 150px;  
+            height: auto;  
+            display: block; 
+            margin: 0 auto 20px;
+          }
+        `}
+      </style>
+      <div>
+        <img src="/솝트.jpg" alt="Welcome Image" />
+        <h1>Main Page</h1>
+        <Link to="/signup">회원가입</Link>
+        <Link to={`/page/${memberId}`}>내정보</Link>   {/* 이제 memberId를 제대로 사용 */}
+      </div>
+    </>
   );
 }
 

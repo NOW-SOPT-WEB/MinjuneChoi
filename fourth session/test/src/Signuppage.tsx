@@ -35,7 +35,7 @@ const SignUpPage: React.FC = () => {
 
         if (memberId) {
           alert(`회원가입이 완료되었습니다: 회원 ID는 ${memberId}입니다.`);
-          navigate(`/login/${memberId}`);
+          navigate(`/`);
         } else {
           alert("회원가입 실패: 서버에서 회원 ID를 반환하지 않았습니다.");
         }

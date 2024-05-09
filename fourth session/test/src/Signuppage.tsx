@@ -1,5 +1,6 @@
 import React, { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import { Container, FormCard, FormInput, FormButton, FromSmall } from './styles/signupstyles';
 
 const SignUpPage: React.FC = () => {
   const [userId, setUserId] = useState<string>("");
@@ -49,46 +50,41 @@ const SignUpPage: React.FC = () => {
   };
 
   return (
-    <>
-      <form onSubmit={handleSignUp}>
+    <Container>
+      <FormCard>
         <h3>회원가입 페이지</h3>
-        <label>
-          ID:{" "}
-          <input
+        <form onSubmit={handleSignUp}>
+          <label>ID: </label>
+          <FormInput
             type="text"
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
           />
-        </label>
-        <label>
-          PW:{" "}
-          <input
+          <label>PW: </label>
+          <FormInput
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-           <small>비밀번호 형식은 8자이상, 숫자, 특수문자, 영어 알파벳이 포함되어야 합니다.</small>
-        </label>
-        <label>
-          닉네임:{" "}
-          <input
+
+          <FromSmall>비밀번호 형식은 8자 이상, 숫자, 특수문자, 영어 알파벳이 포함되어야 합니다.</FromSmall>
+          <div><label>닉네임: </label></div>
+          <FormInput
             type="text"
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
           />
-        </label>
-        <label>
-          핸드폰 번호:{" "}
-          <input
+          <label>핸드폰 번호: </label>
+          <FormInput
             type="text"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
-          <small>전화번호 형식은 010-****-****입니다.</small>
-        </label>
-        <button type="submit">회원가입</button>
-      </form>
-    </>
+          <FromSmall>전화번호 형식은 010-****-****입니다.</FromSmall>
+          <FormButton type="submit">회원가입</FormButton>
+        </form>
+      </FormCard>
+    </Container>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, FormEvent, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Container, LoginCard, LoginImage, LoginInput, LoginButton } from './loginstyles';
+import { Container, LoginCard, LoginImage, LoginInput, LoginButton } from './styles/loginstyles';
 
 
 

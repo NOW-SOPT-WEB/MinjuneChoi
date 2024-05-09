@@ -1,6 +1,8 @@
 import React, { useState, useEffect, FormEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+
+
 interface UserDetails {
   id: string;
   nickname: string;

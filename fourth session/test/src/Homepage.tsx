@@ -12,9 +12,10 @@ const HomePage: React.FC = () => {
         {`
           
           img {
-            width: 100%; 
-            height: auto;/
-            margin-bottom: 20px; 
+            width: 150px;  
+            height: auto;  
+            display: block; 
+            margin: 0 auto 20px;
           }
         `}
       </style>

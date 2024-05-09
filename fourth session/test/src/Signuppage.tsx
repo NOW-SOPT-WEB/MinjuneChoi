@@ -67,6 +67,7 @@ const SignUpPage: React.FC = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+           <small>비밀번호 형식은 8자이상, 숫자, 특수문자, 영어 알파벳이 포함되어야 합니다.</small>
         </label>
         <label>
           닉네임:{" "}
@@ -83,6 +84,7 @@ const SignUpPage: React.FC = () => {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
+          <small>전화번호 형식은 010-****-****입니다.</small>
         </label>
         <button type="submit">회원가입</button>
       </form>

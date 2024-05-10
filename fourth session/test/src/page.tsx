@@ -54,10 +54,21 @@ const Page: React.FC = () => {
 
   const handlePasswordChange = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!password || !newPassword || !confirmPassword) {
+    if (!password) {
       alert("모든 필드를 입력해야 합니다.");
       return;
     }
+
+
+    if(!newPassword){
+      alert("새로운 비밀번호를 입력해야합니다.");
+      return;
+    }
+    if(!confirmPassword){
+      alert("새로운 비밀번호 확인란를 입력해야합니다.");
+      return;
+    }
+
     if (newPassword !== confirmPassword) {
       alert("입력한 두 비밀번호가 일치하지 않습니다.");
       return;

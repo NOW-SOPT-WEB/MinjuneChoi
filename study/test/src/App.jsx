@@ -68,17 +68,22 @@ const App = () => {
         </div>
       )}
       {selectedFoodType && (
-        <div>
-          <Button onClick={handleNextClick}>다음으로</Button>
-        </div>
-      )}
-      {category && (
-        <div>
-          <ButtonFoodType selected={selectedCategory === 'Rice'} onClick={() => handleCategorySelection('Rice')}>밥</ButtonFoodType>
-          <ButtonFoodType selected={selectedCategory === 'Noodle'} onClick={() => handleCategorySelection('Noodle')}>면</ButtonFoodType>
-          <ButtonFoodType selected={selectedCategory === 'Mseafood'} onClick={() => handleCategorySelection('Mseafood')}>고기/해물</ButtonFoodType>
-        </div>
-      )}
+      <div>
+        <Button onClick={handleNextClick}>다음으로</Button>
+      </div>
+    )}
+    {category && (
+      <div>
+        <ButtonFoodType selected={selectedCategory === 'Rice'} onClick={() => handleCategorySelection('Rice')}>밥</ButtonFoodType>
+        <ButtonFoodType selected={selectedCategory === 'Noodle'} onClick={() => handleCategorySelection('Noodle')}>면</ButtonFoodType>
+        <ButtonFoodType selected={selectedCategory === 'Mseafood'} onClick={() => handleCategorySelection('Mseafood')}>고기/해물</ButtonFoodType>
+      </div>
+    )}
+    {selectedCategory && (
+      <div>
+        <Button onClick={handleNextClick}>다음으로</Button>
+      </div>
+    )}
     </Body>
   );
 };

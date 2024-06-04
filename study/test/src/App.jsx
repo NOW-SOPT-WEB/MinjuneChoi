@@ -1,13 +1,22 @@
-
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
 const App = () => {
   const [recommend, setRecommend] = useState('');
+  const [foodType, setFoodType] = useState(false);
+  const [selectedFoodType, setSelectedFoodType] = useState('');
 
-  const Recommendation = (type) => {
+  const handleRecommendation = (type) => {
     setRecommend(type);
-  }
+  };
+
+  const handleStartButtonClick = () => {
+    setFoodType(true); 
+  };
+
+  const handleFoodSelection = (food) => {
+    setSelectedFoodType(food);
+  };
 
   return (
     <Body>
@@ -19,7 +28,7 @@ const App = () => {
         {!recommend || recommend === 'taste' ? (
           <Button
             selected={recommend === 'taste'}
-            onClick={() => Recommendation('taste')}
+            onClick={() => handleRecommendation('taste')}
           >
             취향대로 추천
           </Button>
@@ -28,18 +37,29 @@ const App = () => {
           {!recommend || recommend === 'random' ? (
             <Button
               selected={recommend === 'random'}
-              onClick={() => Recommendation('random')}
+              onClick={() => handleRecommendation('random')}
             >
               랜덤 추천
             </Button>
           ) : null}
         </SmallButtonWrapper>
-         
       </ButtonWrapper>
       {recommend && (
-            <StartButton>
-              Start
-            </StartButton>
+        <StartButton onClick={handleStartButtonClick}>
+          Start
+        </StartButton>
+      )}
+      {foodType && (
+        <div>
+          <ButtonFoodType selected={selectedFoodType === 'Korean'} onClick={() => handleFoodSelection('Korean')}>한식</ButtonFoodType>
+          <ButtonFoodType selected={selectedFoodType === 'Chinese'} onClick={() => handleFoodSelection('Chinese')}>중식</ButtonFoodType>
+          <ButtonFoodType selected={selectedFoodType === 'Japanese'} onClick={() => handleFoodSelection('Japanese')}>일식</ButtonFoodType>
+        </div>
+      )}
+      {selectedFoodType && (
+        <div>
+          <Button onClick={() => {}}>다음으로</Button>
+        </div>
       )}
     </Body>
   );
@@ -49,19 +69,19 @@ export default App;
 
 const Button = styled.button`
   cursor: pointer;
-  background: blue;
+  background:  blue;
   color: black;
-  padding: ${(props) => props.selected ? '30px 45px' : '20px 30px'}; 
+  padding: ${(props) => props.selected ? '30px 45px' : '20px 30px'};
   margin: 8px;
+  font-weight: bold;
   &:hover {
     background-color: white;
     color: gray;
   }
-  font-weight: bold;
 `;
 
-const StartButton = styled(Button)` 
-  padding : 10px 20px;
+const StartButton = styled(Button)`
+  padding: 10px 20px;
   background: red;
 `;
 
@@ -75,7 +95,14 @@ const Body = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
+
 const SmallButtonWrapper = styled.div`
-  display : flex;
+  display: flex;
+`;
+
+const ButtonFoodType = styled(Button)`
+  background: ${(props) => props.selected ? 'white' : 'blue'};
+  color: ${(props) => props.selected ? 'gray' : 'black'};
 `
+

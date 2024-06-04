@@ -5,6 +5,8 @@ const App = () => {
   const [recommend, setRecommend] = useState('');
   const [foodType, setFoodType] = useState(false);
   const [selectedFoodType, setSelectedFoodType] = useState('');
+  const [category, setCategory] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const handleRecommendation = (type) => {
     setRecommend(type);
@@ -16,6 +18,15 @@ const App = () => {
 
   const handleFoodSelection = (food) => {
     setSelectedFoodType(food);
+    setCategory(false); 
+  };
+
+  const handleNextClick = () => {
+    setCategory(true); 
+  };
+
+  const handleCategorySelection = (category) => {
+    setSelectedCategory(category); 
   };
 
   return (
@@ -46,7 +57,7 @@ const App = () => {
       </ButtonWrapper>
       {recommend && (
         <StartButton onClick={handleStartButtonClick}>
-          Start
+          시작
         </StartButton>
       )}
       {foodType && (
@@ -58,7 +69,14 @@ const App = () => {
       )}
       {selectedFoodType && (
         <div>
-          <Button onClick={() => {}}>다음으로</Button>
+          <Button onClick={handleNextClick}>다음으로</Button>
+        </div>
+      )}
+      {category && (
+        <div>
+          <ButtonFoodType selected={selectedCategory === 'Rice'} onClick={() => handleCategorySelection('Rice')}>밥</ButtonFoodType>
+          <ButtonFoodType selected={selectedCategory === 'Noodle'} onClick={() => handleCategorySelection('Noodle')}>면</ButtonFoodType>
+          <ButtonFoodType selected={selectedCategory === 'Mseafood'} onClick={() => handleCategorySelection('Mseafood')}>고기/해물</ButtonFoodType>
         </div>
       )}
     </Body>
@@ -69,7 +87,7 @@ export default App;
 
 const Button = styled.button`
   cursor: pointer;
-  background:  blue;
+  background: blue;
   color: black;
   padding: ${(props) => props.selected ? '30px 45px' : '20px 30px'};
   margin: 8px;
@@ -104,5 +122,4 @@ const SmallButtonWrapper = styled.div`
 const ButtonFoodType = styled(Button)`
   background: ${(props) => props.selected ? 'white' : 'blue'};
   color: ${(props) => props.selected ? 'gray' : 'black'};
-`
-
+`;

@@ -13,9 +13,6 @@ const App = () => {
   const handleSoupSelection = (brothOption) => {
     setSelectedBroth(brothOption);
   };
-  
-
-  
 
   const handleRecommendation = (type) => {
     setRecommend(type);
@@ -45,6 +42,7 @@ const App = () => {
         <h3>원하는 추천 방식을 골라줘</h3>
       </div>
       <ButtonWrapper>
+        {/* 추천 변수가 비어있거나 거짓?! 그리고 추천을 클릭했을 때 그 추천이 "취향대로 추천일때의 조건" */}
         {!recommend || recommend === 'taste' ? (
           <Button
             selected={recommend === 'taste'}
@@ -52,7 +50,7 @@ const App = () => {
           >
             취향대로 추천
           </Button>
-        ) : null}
+        ) : null} {/* 여기서 null은 아무상태로 나타내지 않는다*/}
         <SmallButtonWrapper>
           {!recommend || recommend === 'random' ? (
             <Button
@@ -140,6 +138,7 @@ const SmallButtonWrapper = styled.div`
 `;
 
 const ButtonFoodType = styled(Button)`
+  //선택시 색깔변경
   background: ${(props) => props.selected ? 'white' : 'blue'};
   color: ${(props) => props.selected ? 'gray' : 'black'};
 `;

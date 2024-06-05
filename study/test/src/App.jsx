@@ -7,6 +7,15 @@ const App = () => {
   const [selectedFoodType, setSelectedFoodType] = useState('');
   const [category, setCategory] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [broth, setBroth] = useState(false);
+  const [selectedBroth, setSelectedBroth] = useState('');
+
+  const handleSoupSelection = (brothOption) => {
+    setSelectedBroth(brothOption);
+  };
+  
+
+  
 
   const handleRecommendation = (type) => {
     setRecommend(type);
@@ -81,7 +90,13 @@ const App = () => {
     )}
     {selectedCategory && (
       <div>
-        <Button onClick={handleNextClick}>다음으로</Button>
+        <Button onClick={() => setBroth(true)}>다음으로</Button>
+      </div>
+    )}
+    {broth && (
+      <div>
+        <ButtonFoodType selected={selectedBroth === 'soup'} onClick={() => handleSoupSelection('soup')}>국물O</ButtonFoodType>
+        <ButtonFoodType selected={selectedBroth === 'nosoup'} onClick={() => handleSoupSelection('nosoup')}>국물X</ButtonFoodType>
       </div>
     )}
     </Body>

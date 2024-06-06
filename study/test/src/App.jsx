@@ -30,8 +30,10 @@ const App = () => {
 
   const handleNextClick = () => {
     setCategory(true); 
+    setFoodType(false);
+    setRecommend(null);
   };
-
+  
   const handleCategorySelection = (category) => {
     setSelectedCategory(category); 
   };
@@ -75,29 +77,30 @@ const App = () => {
           <ButtonFoodType selected={selectedFoodType === 'Japanese'} onClick={() => handleFoodSelection('Japanese')}>일식</ButtonFoodType>
         </div>
       )}
+
       {selectedFoodType && (
-      <div>
-        <Button onClick={handleNextClick}>다음으로</Button>
-      </div>
-    )}
-    {category && (
-      <div>
-        <ButtonFoodType selected={selectedCategory === 'Rice'} onClick={() => handleCategorySelection('Rice')}>밥</ButtonFoodType>
-        <ButtonFoodType selected={selectedCategory === 'Noodle'} onClick={() => handleCategorySelection('Noodle')}>면</ButtonFoodType>
-        <ButtonFoodType selected={selectedCategory === 'Mseafood'} onClick={() => handleCategorySelection('Mseafood')}>고기/해물</ButtonFoodType>
-      </div>
-    )}
-    {selectedCategory && (
-      <div>
-        <Button onClick={() => setBroth(true)}>다음으로</Button>
-      </div>
-    )}
-    {broth && (
-      <div>
-        <ButtonFoodType selected={selectedBroth === 'soup'} onClick={() => handleSoupSelection('soup')}>국물O</ButtonFoodType>
-        <ButtonFoodType selected={selectedBroth === 'nosoup'} onClick={() => handleSoupSelection('nosoup')}>국물X</ButtonFoodType>
-      </div>
-    )}
+        <div>
+          <Button onClick={handleNextClick}>다음으로</Button>
+        </div>
+      )}
+      {category && (
+        <div>
+          <ButtonFoodType selected={selectedCategory === 'Rice'} onClick={() => handleCategorySelection('Rice')}>밥</ButtonFoodType>
+          <ButtonFoodType selected={selectedCategory === 'Noodle'} onClick={() => handleCategorySelection('Noodle')}>면</ButtonFoodType>
+          <ButtonFoodType selected={selectedCategory === 'Mseafood'} onClick={() => handleCategorySelection('Mseafood')}>고기/해물</ButtonFoodType>
+        </div>
+      )}
+      {selectedCategory && (
+        <div>
+          <Button onClick={() => setBroth(true)}>다음으로</Button>
+        </div>
+      )}
+      {broth && (
+        <div>
+          <ButtonFoodType selected={selectedBroth === 'soup'} onClick={() => handleSoupSelection('soup')}>국물O</ButtonFoodType>
+          <ButtonFoodType selected={selectedBroth === 'nosoup'} onClick={() => handleSoupSelection('nosoup')}>국물X</ButtonFoodType>
+        </div>
+      )}
     </Body>
   );
 };

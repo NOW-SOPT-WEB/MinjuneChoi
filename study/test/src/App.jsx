@@ -20,6 +20,7 @@ const App = () => {
 
   const handleStartButtonClick = () => {
     setFoodType(true); 
+    setRecommend(null);
   };
 
   const handleFoodSelection = (food) => {
@@ -42,24 +43,24 @@ const App = () => {
         <h3>원하는 추천 방식을 골라줘</h3>
       </div>
       <ButtonWrapper>
-        {/* 추천 변수가 비어있거나 거짓?! 그리고 추천을 클릭했을 때 그 추천이 "취향대로 추천일때의 조건" */}
-        {!recommend || recommend === 'taste' ? (
+        {/* 음식유형 화면 체크 =!foodType */} 
+        {!foodType && (!recommend || recommend === 'taste') &&(
           <Button
             selected={recommend === 'taste'}
             onClick={() => handleRecommendation('taste')}
           >
             취향대로 추천
           </Button>
-        ) : null} {/* 여기서 null은 아무상태로 나타내지 않는다*/}
+        ) } 
         <SmallButtonWrapper>
-          {!recommend || recommend === 'random' ? (
+          {!foodType && (!recommend || recommend === 'random') && (
             <Button
               selected={recommend === 'random'}
               onClick={() => handleRecommendation('random')}
             >
               랜덤 추천
             </Button>
-          ) : null}
+          ) }
         </SmallButtonWrapper>
       </ButtonWrapper>
       {recommend && (

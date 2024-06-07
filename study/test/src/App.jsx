@@ -1,0 +1,142 @@
+import styled from '@emotion/styled';
+import { useState } from 'react';
+
+const App = () => {
+  const [recommend, setRecommend] = useState('');
+  const [foodType, setFoodType] = useState(false);
+  const [selectedFoodType, setSelectedFoodType] = useState('');
+  const [category, setCategory] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [broth, setBroth] = useState(false);
+  const [selectedBroth, setSelectedBroth] = useState('');
+
+  const handleSoupSelection = (brothOption) => {
+    setSelectedBroth(brothOption);
+  };
+
+  const handleRecommendation = (type) => {
+    setRecommend(type);
+  };
+
+  const handleStartButtonClick = () => {
+    setFoodType(true); 
+    setRecommend(null);
+  };
+
+  const handleFoodSelection = (food) => {
+    setSelectedFoodType(food);
+    setCategory(false); 
+  };
+
+  const handleNextClick = () => {
+    setCategory(true); 
+    setFoodType(false);
+    setRecommend(null);
+  };
+  
+  const handleCategorySelection = (category) => {
+    setSelectedCategory(category); 
+  };
+
+  return (
+    <Body>
+      <div>
+        <h1>오늘의 점매추</h1>
+        <h3>원하는 추천 방식을 골라줘</h3>
+      </div>
+      <ButtonWrapper>
+        {/* 음식유형 화면 체크 =!foodType */} 
+        {!foodType && (!recommend || recommend === 'taste') &&(
+          <Button selected={recommend === 'taste'} onClick={() => handleRecommendation('taste')}>
+            취향대로 추천
+          </Button>
+        ) } 
+        <SmallButtonWrapper>
+          {!foodType && (!recommend || recommend === 'random') && (
+            <Button selected={recommend === 'random'}onClick={() => handleRecommendation('random')}>
+              랜덤 추천
+            </Button>
+          ) }
+        </SmallButtonWrapper>
+      </ButtonWrapper>
+      {recommend && (
+        <StartButton onClick={handleStartButtonClick}>
+          시작
+        </StartButton>
+      )}
+      {foodType && (
+        <div>
+          <ButtonFoodType selected={selectedFoodType === 'Korean'} onClick={() => handleFoodSelection('Korean')}>한식</ButtonFoodType>
+          <ButtonFoodType selected={selectedFoodType === 'Chinese'} onClick={() => handleFoodSelection('Chinese')}>중식</ButtonFoodType>
+          <ButtonFoodType selected={selectedFoodType === 'Japanese'} onClick={() => handleFoodSelection('Japanese')}>일식</ButtonFoodType>
+        </div>
+      )}
+
+      {selectedFoodType && (
+        <div>
+          <Button onClick={handleNextClick}>다음으로</Button>
+        </div>
+      )}
+      {category && (
+        <div>
+          <ButtonFoodType selected={selectedCategory === 'Rice'} onClick={() => handleCategorySelection('Rice')}>밥</ButtonFoodType>
+          <ButtonFoodType selected={selectedCategory === 'Noodle'} onClick={() => handleCategorySelection('Noodle')}>면</ButtonFoodType>
+          <ButtonFoodType selected={selectedCategory === 'Mseafood'} onClick={() => handleCategorySelection('Mseafood')}>고기/해물</ButtonFoodType>
+        </div>
+      )}
+      {selectedCategory && (
+        <div>
+          <Button onClick={() => setBroth(true)}>다음으로</Button>
+        </div>
+      )}
+      {broth && (
+        <div>
+          <ButtonFoodType selected={selectedBroth === 'soup'} onClick={() => handleSoupSelection('soup')}>국물O</ButtonFoodType>
+          <ButtonFoodType selected={selectedBroth === 'nosoup'} onClick={() => handleSoupSelection('nosoup')}>국물X</ButtonFoodType>
+        </div>
+      )}
+    </Body>
+  );
+};
+
+export default App;
+
+const Button = styled.button`
+  cursor: pointer;
+  background: blue;
+  color: black;
+  padding: ${(props) => props.selected ? '3rem 4.5rem' : '2rem 3rem'};
+  margin: 0.8rem;
+  font-weight: bold;
+  &:hover {
+    background-color: white;
+    color: gray;
+  }
+`;
+
+const StartButton = styled(Button)`
+  padding: 1rem 2rem;
+  background: red;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 1.5rem;
+`;
+
+const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SmallButtonWrapper = styled.div`
+  display: flex;
+`;
+
+const ButtonFoodType = styled(Button)`
+  //선택시 색깔변경
+  background: ${(props) => props.selected ? 'white' : 'blue'};
+  color: ${(props) => props.selected ? 'gray' : 'black'};
+`;

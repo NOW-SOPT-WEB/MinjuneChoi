@@ -47,19 +47,13 @@ const App = () => {
       <ButtonWrapper>
         {/* 음식유형 화면 체크 =!foodType */} 
         {!foodType && (!recommend || recommend === 'taste') &&(
-          <Button
-            selected={recommend === 'taste'}
-            onClick={() => handleRecommendation('taste')}
-          >
+          <Button selected={recommend === 'taste'} onClick={() => handleRecommendation('taste')}>
             취향대로 추천
           </Button>
         ) } 
         <SmallButtonWrapper>
           {!foodType && (!recommend || recommend === 'random') && (
-            <Button
-              selected={recommend === 'random'}
-              onClick={() => handleRecommendation('random')}
-            >
+            <Button selected={recommend === 'random'}onClick={() => handleRecommendation('random')}>
               랜덤 추천
             </Button>
           ) }
@@ -111,8 +105,8 @@ const Button = styled.button`
   cursor: pointer;
   background: blue;
   color: black;
-  padding: ${(props) => props.selected ? '30px 45px' : '20px 30px'};
-  margin: 8px;
+  padding: ${(props) => props.selected ? '3rem 4.5rem' : '2rem 3rem'};
+  margin: 0.8rem;
   font-weight: bold;
   &:hover {
     background-color: white;
@@ -121,13 +115,13 @@ const Button = styled.button`
 `;
 
 const StartButton = styled(Button)`
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   background: red;
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 1.5rem;
 `;
 
 const Body = styled.div`
